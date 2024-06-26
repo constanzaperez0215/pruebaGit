@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styleForm.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form">
+        <p class="title">Payment</p>
+        <p class="message">Debes ingresar todos los datos </p>
+            <div class="flex">
+            <label>
+                <input class="input" type="text" placeholder="" required="">
+                <span>Nombre</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" placeholder="" required="">
+                <span>Apellido</span>
+            </label>
+        </div>
+
+        <label>
+            <input class="input" type="number" placeholder="" required="" maxlength="16" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16); ">
+            <span>N° Tarjeta</span>
+        </label>
+
+        <label>
+            <input class="input" type="number" placeholder="" required="" maxlength="3" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 3); ">
+            <span>CVC</span>
+        </label>
+        <label>
+            <input class="input" type="number" placeholder="" required="" maxlength="16" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16); ">
+            <span>Cantidad</span>
+        </label>
+        <label>
+                <p class="message">Aceptamos:</p>
+                <div class="tarjetas">
+                    <input type="radio" name="tc" value="visa" />
+                    <i id="tc" class="fa-brands fa-cc-visa"></i>
+                    <input type="radio" name="tc" value="mastercard" />
+                    <i id="tc" class="fa-brands fa-cc-mastercard"></i>
+                    <input type="radio" name="tc" value="diners" />
+                    <i id="tc" class="fa-brands fa-cc-diners-club"></i>
+                    <input type="radio" name="tc" value="american" />
+                    <i id="tc" class="fab fa-cc-amex"></i>
+
+            </div>
+        </label>
+        <label>
+            <input class="input" type="number" placeholder="" required="" maxlength="16" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16); ">
+            <span>Mensaje</span>
+        </label>
+        <button class="submit">Submit</button>
+        <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+    </form>
+</body>
+</html>

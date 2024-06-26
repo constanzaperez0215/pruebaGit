@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <link rel="stylesheet" href="./style.css">
+    <title>Practica de input</title>
+</head>
+
+<body>
+    <div class="pagos">
+        <h2 class="titulo">Payment</h2>
+
+        <div class="alert">
+            <p>Todos los campos deben estar completos</p>
+        </div>
+        <div class="container">
+            <div class="section">
+                <div>
+                    <p>Tarjeta #</p>
+                    <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" required="" maxlength="16" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16); ">
+                </div>
+                <div>
+                    <p>CVC #</p>
+                    <input type="number" placeholder="CVC"required maxlength="3" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 3);">
+                </div>
+                <div>
+                    <p>Monto</p>
+                    <input type="number" placeholder="$"required maxlength="16" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);">
+                </div>
+            </div>
+
+            <div class="section">
+                <div>
+                    <p>Nombre:</p>
+                    <input type="text" maxlength="20" placeholder="Ingresa tu nombre"required>
+                </div>
+                <div>
+                    <p>Apellido:</p>
+                    <input type="text" maxlength="20" placeholder="Ingresa tu apellido"required>
+                </div>
+            </div>
+            <div class="section">
+                <div>
+                    <p>Ciudad:</p>
+                    <input type="text" placeholder="Ingresa tu ciudad"required>
+                </div>
+                <div>
+                    <p>Comuna:</p>
+                    <select name="comuna" id=""required >
+                        <option value="">Selecciona </option>
+                        <option value="">Santiago</option>
+                        <option value="">San Bernardo</option>
+                        <option value="">Las Condes</option>
+                        <option value="">Providencia</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Codigo postal:</p>
+                    <input type="number" placeholder="Codigo de tu comuna" required="" maxlength="7" pattern="\d{1,9}"inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 7);">
+                </div>
+            </div>
+            <div class="section">
+                <div class="tc">
+                    <p>Aceptamos:</p>
+                    <div class="tarjetas">
+                        <input type="radio" name="tc" value="visa" />
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <input type="radio" name="tc" value="mastercard" />
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <input type="radio" name="tc" value="diners" />
+                        <i class="fa-brands fa-cc-diners-club"></i>
+                        <input type="radio" name="tc" value="american" />
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+                <div>
+                    <p>Mensaje:</p>
+                    <textarea id="mensaje" name="mensaje" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <button class="btnCancelar">Cancelar</button>
+            <button class="btnEnviar">Enviar</button>
+        </div>
+    </div>
+</body>
+
+</html>
